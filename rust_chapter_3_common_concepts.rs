@@ -12,10 +12,10 @@ Common Programming Concepts:
 	The book provides us with an example of something that won't work:*/
 
 	fn main() {
-	    let x = 5;	//x assigned as immutable
-	    println!("The value of x is: {x}");
-	    x = 6;		//attempted reassignment of immutable variable: Illegal!
-	    println!("The value of x is: {x}");
+		let x = 5;  //x assigned as immutable
+		println!("The value of x is: {x}");
+		x = 6;      //attempted reassignment of immutable variable: Illegal!
+		println!("The value of x is: {x}");
 	}
 
 	/*
@@ -73,9 +73,9 @@ Common Programming Concepts:
 	We can fix the previous code by making x mut, as the compiler suggests:*/
 
 	fn main() {
-		let mut x = 5;	//x assigned as mutable
+		let mut x = 5;  //x assigned as mutable
 		println!("The value of x is {x}");
-		x = 6;			//attempted reassignment of mutable variable: Legal!
+		x = 6;          //attempted reassignment of mutable variable: Legal!
 		println!("The value of x is {x}");
 	}
 
@@ -114,14 +114,14 @@ Shadowing:
 		let x = x + 1; //x now refers to this variable, whose value is 6.
 
 		{
-			let x = x * 2; 	//x now refers to this variable, whose value is 12.
+			let x = x * 2;  //x now refers to this variable, whose value is 12.
 							//This happens because x in the outer scope refers
 							//to the x of value 6, which overshadows the x with
 							//value 5.
 			println!("The value of x in the inner scope is: {x}"); //prints 12
 		}
 
-		println!("The value of x is: {x}");	//prints 6, as the value 5 x is
+		println!("The value of x is: {x}"); //prints 6, as the value 5 x is
 											//still shadowed by the value 6 x,
 											//and the value 12 x left scope.
 	}
@@ -136,15 +136,15 @@ Shadowing:
 	want to know how many spaces the user has entered:*/
 
 	let spaces = "   ";
-    let spaces = spaces.len(); 	//Shadowing turns our string into a u32. Also
-    							//note that we can keep some sort of logical
-    							//consistency within our name scheme without
-    							//introducing a ton of separate variables.
+	let spaces = spaces.len();  //Shadowing turns our string into a u32. Also
+								//note that we can keep some sort of logical
+								//consistency within our name scheme without
+								//introducing a ton of separate variables.
 
-    let mut spaces = "   ";
-    spaces = spaces.len(); //mutating a string to a u32 fails to compile
+	let mut spaces = "   ";
+	spaces = spaces.len(); //mutating a string to a u32 fails to compile
 
-    /*
+	/*
 
 Data Types:
 
@@ -171,12 +171,12 @@ Data Types:
 			designations to make a bunch of different types:
 
 			length | signed | unsigned
-			8-bit		i8		u8 			//byte
-			16-bit		i16		u16			//short
-			32-bit		i32		u32			//int
-			64-bit		i64		u64			//long
-			128-bit		i128	u128		//double
-			arch 		isize	usize
+			8-bit       i8      u8          //byte
+			16-bit      i16     u16         //short
+			32-bit      i32     u32         //int
+			64-bit      i64     u64         //long
+			128-bit     i128    u128        //double
+			arch        isize   usize
 
 			Signed numbers are stored in two's complement. Arch sizes depend
 			on the architecture of the OS: They are 32 bits for 32-bit
@@ -205,21 +205,21 @@ Data Types:
 		them:*/
 
 		fn main() {
-		    // addition
-		    let sum = 5 + 10;
+			// addition
+			let sum = 5 + 10;
 
-		    // subtraction
-		    let difference = 95.5 - 4.3;
+			// subtraction
+			let difference = 95.5 - 4.3;
 
-		    // multiplication
-		    let product = 4 * 30;
+			// multiplication
+			let product = 4 * 30;
 
-		    // division
-		    let quotient = 56.7 / 32.2;
-		    let truncated = -5 / 3; // Results in -1
+			// division
+			let quotient = 56.7 / 32.2;
+			let truncated = -5 / 3; // Results in -1
 
-		    // remainder
-		    let remainder = 43 % 5;
+			// remainder
+			let remainder = 43 % 5;
 		}
 
 		/*
@@ -237,9 +237,9 @@ Data Types:
 			things like:*/
 
 			fn main() {
-			    let c = 'z';
-			    let z: char = 'ℤ'; // with explicit type annotation
-			    let heart_eyed_cat = '😻';
+				let c = 'z';
+				let z: char = 'ℤ'; // with explicit type annotation
+				let heart_eyed_cat = '😻';
 			}
 
 			/*
